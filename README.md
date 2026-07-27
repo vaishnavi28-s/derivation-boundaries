@@ -53,3 +53,5 @@ composed in one step.
 Sreekumar, V. (2026). Derivation Boundaries: A Structural Source of
 Faithfulness Failure in Large Language Models. Journal of Computer and
 Forensic Sciences. (Accepted)
+
+This repo has the code and experiments for the extended version of the paper. The PDF is the accepted manuscript from JCFS 2026. The extended write-up is still in progress.
