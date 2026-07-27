@@ -1,7 +1,16 @@
-torch
-transformers
-accelerate
-bitsandbytes
-huggingface_hub
-scipy
-numpy
+# Python 3.10+
+#
+# Reproducibility notes:
+# - All generation uses greedy decoding (do_sample=False), so outputs are
+#   deterministic. No random seed is required.
+# - Experiments were run on Llama 3.1 8B Instruct (4-bit and fp16) and
+#   Qwen 2.5 7B Instruct. The 4-bit runs require bitsandbytes; fp16 does not.
+# - numpy is pinned below 2.0 to avoid incompatibility with older torch builds.
+
+torch>=2.1,<2.6
+transformers>=4.44,<4.50
+accelerate>=0.33
+bitsandbytes>=0.43
+huggingface_hub>=0.24
+scipy>=1.11
+numpy>=1.24,<2.0
