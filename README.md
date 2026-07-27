@@ -1,6 +1,6 @@
 # Derivation Boundaries: A Structural Source of Faithfulness Failure in Large Language Models
 Code and data for the paper "Derivation Boundaries: A Structural Source of
-Faithfulness Failure in Large Language Models" (JCFS 2026).
+Faithfulness Failure in Large Language Models" (Accepted,JCFS 2026).
 
 ## Introduction
 
