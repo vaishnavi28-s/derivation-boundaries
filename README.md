@@ -4,15 +4,7 @@ Faithfulness Failure in Large Language Models" (Accepted,JCFS 2026).
 
 ## Introduction
 
-Large language models are often given rules, thresholds, or computed values and
-expected to use them faithfully. They do not do so uniformly. This work identifies
-derivation boundaries: points in a reasoning chain where a known fact must be
-transformed into a new value through a rule-conditioned lookup. Failures concentrate
-at these points, which are fixed by a task's structure and identifiable before a model
-is run. A controlled decomposition shows each sub-step succeeds in isolation while
-their composition fails, and layer-wise analysis using the logit lens shows boundary
-values commit at normal depth but with lower confidence. Experiments use the RuleArena
-airline benchmark on Llama 3.1 8B Instruct and Qwen 2.5 7B Instruct.
+Faithfulness to supplied information is not uniform in large language models: some rules, thresholds, or features shape outputs correctly while others do not, with nothing in a model’s own explanations distinguishing the two. An industrial classification task motivates this observation, where supplying a classifier’s exact decision thresholds improved accuracy while degrading minority-class recall, raising the question of where such failures occur. Because that setting involved a closed model and proprietary data, the same question is examined in two domains: airline baggage-fee and tax calculation. Across domains, models reliably handle directly available values but fail when a known fact must be transformed into a new value through a rule-conditioned lookup, points named here derivation boundaries. Two error patterns recur there: misassignment, in which a valid value is assigned to the wrong side of a rule boundary, and fabrication, in which a value unsupported by the rules is introduced and justified as though retrieved correctly. Layer-wise analysis using the logit lens suggests a mechanistic explanation. Directly available values stabilize early, whereas boundary-dependent values commit later and less stably, with correct alternatives often remaining competitive until the final layers. Faithfulness failures concentrate at derivation boundaries rather than spreading uniformly, a pattern layer-wise analysis links to delayed internal resolution.
 
 ## Setup
 
